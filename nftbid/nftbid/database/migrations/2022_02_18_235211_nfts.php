@@ -24,7 +24,8 @@ return new class extends Migration
             $table->string('token_standar');
             $table->string('blockchain_type');
             $table->string('metadata');
-            $table->integer('likes');           
+            $table->integer('likes'); 
+            $table->string('slug');          
             $table->integer('id_category')->unsigned();
             $table->integer('id_user')->unsigned();
             $table->foreign('id_category')->references('id')->on('categories');
