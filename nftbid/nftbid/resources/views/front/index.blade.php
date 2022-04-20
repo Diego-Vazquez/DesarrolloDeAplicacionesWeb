@@ -39,7 +39,7 @@
 			<div class="row">
 				<!-- Single Banner  -->
 				@foreach($categorias as $cate)
-				<div class="col-lg-4 col-md-6 col-12">
+				<div class="col-lg-4 col-md-6 col-12 p-2">
 					<div class="single-banner" style="height: 200px;">
 						<div class="imagen">						
 						</div>

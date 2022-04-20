@@ -274,6 +274,7 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('/dash/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{ asset('/dash/js/demo/chart-pie-demo.js')}}"></script>
+    @yield('scripts')
 </body>
 
 </html>

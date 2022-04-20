@@ -14,20 +14,23 @@ use App\Http\Controllers\Front\IndexController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['prefix'=>'admin','as'=>'admin'],function(){
+    Route::get('/', function () { return view('dash.layouts.contentWrapper'); })->name('admin');
+    
+    Route::get('/productos', [ProductosController::class,'miFuncion']);
+    
+    Route::post('/productos',[ProductosController::class,'insertar']);
+
+    Route::post('/categorias/update',[CategoriesController::class,'update']);
+    
+    //Route::get('/categorias', [CategoriesController::class,'index']);
+    
+    //Route::post('/categorias', [CategoriesController::class,'store']);
+
+    Route::resource('categorias',CategoriesController::class);
+});
 
 Route::get('/',[IndexController::class,'index']);
-
-Route::get('/admin', function () {
-    return view('dash.layouts.contentWrapper');
-})->name('admin');
-
-Route::get('/admin/productos', [ProductosController::class,'miFuncion']);
-
-Route::post('/admin/productos',[ProductosController::class,'insertar']);
-
-Route::get('/admin/categorias', [CategoriesController::class,'index']);
-
-Route::post('/admin/categorias', [CategoriesController::class,'store']);
 
 Route::get('/contacto', function(){
     echo "hola";
